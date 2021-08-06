@@ -35,7 +35,7 @@ export default defineComponent({
     // ⛔️ Argument of type '"data"' is not assignable to parameter of type 'string & ((number | unique symbol | "length" | "toString" | "toLocaleString" | "concat" | "join" | "slice" | "indexOf" | "lastIndexOf" | "every" | "some" | "forEach" | "map" | ... 33 more ... | (<A, D extends number = 1>(this: A, depth?: D | undefined) => FlatArray<...>[])) & string)'.ts(2345)
     let allEvents = toRef(props, 'data')
                                  ^^^^^^
-   // ⛔️ Property 'when' does not exist on type 'Readonly<LooseRequired<Readonly<readonly unknown[] & { [x: number]: string; } & { [iterator]?: IterableIterator<string> | undefined; length?: number | undefined; toString?: string | undefined; toLocaleString?: string | undefined; ... 19 more ...; flat?: unknown[] | undefined; }> | Readonly<...>>>'.ts(2339)
+    // ⛔️ Property 'when' does not exist on type 'Readonly<LooseRequired<Readonly<readonly unknown[] & { [x: number]: string; } & { [iterator]?: IterableIterator<string> | undefined; length?: number | undefined; toString?: string | undefined; toLocaleString?: string | undefined; ... 19 more ...; flat?: unknown[] | undefined; }> | Readonly<...>>>'.ts(2339)
     if (props.when === 'today') {
               ^^^^
     }
