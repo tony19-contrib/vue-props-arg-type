@@ -32,14 +32,36 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, toRef } from 'vue';
 
 export default defineComponent({
-  name: 'HelloWorld',
+  name: 'App',
   props: {
     msg: String,
+    when: {
+      type: String,
+      default: '',
+      validator(value: string) {
+        return ['today', 'tomorrow', 'later'].includes(value)
+      },
+      required: true
+    },
+    data: {
+      type: Object,
+      default () {
+        return {}
+      },
+      required: true
+    },
   },
-});
+  setup(props) {
+    let allEvents = toRef(props, 'data')
+
+    if (props.when === 'today') {
+      // ...
+    }
+  }
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
