@@ -41,16 +41,12 @@ export default defineComponent({
     when: {
       type: String,
       default: '',
-      validator(value: string) {
-        return ['today', 'tomorrow', 'later'].includes(value)
-      },
+      validator: (value: string) => ['today', 'tomorrow', 'later'].includes(value),
       required: true
     },
     data: {
       type: Object,
-      default () {
-        return {}
-      },
+      default: () => ({}),
       required: true
     },
   },
